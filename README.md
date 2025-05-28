@@ -15,6 +15,6 @@ git clone https://github.com/GradPolina/AutomationExercise.git
 
 ## Intall all dependencies
 ```bash
-npm i
+npm install
 ```
 
