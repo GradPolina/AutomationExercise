@@ -1,0 +1,25 @@
+{
+  "name": "automationexercise",
+  "version": "1.0.0",
+  "description": "Hello",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GradPolina/AutomationExercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GradPolina/AutomationExercise/issues"
+  },
+  "homepage": "https://github.com/GradPolina/AutomationExercise#readme",
+
+  "devDependencies": {
+  "cypress": "14.4.0"  
+  }
+}
