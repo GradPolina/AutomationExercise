@@ -1,4 +1,3 @@
-# AutomationExercise
 <div align="center">
   <h1>E2E AutomationExercise</h1>
 </div>
