@@ -1,7 +1,25 @@
 import Header from "./Header";
 
-class SignupLoginPage {
-    getLoginToYourAccountTitle = () => cy.get('.login-form h2');   
+class LoginToYourAccount {
+    getLoginToYourAccountTitle = () => cy.get('.login-form h2');
+    getEmailAddressField = () => cy.get('.login-form input[type="email"]');
+    getPasswordField = () => cy.get('input[type="password"]');
+    getLoginButton = () => cy.get('.login-form button[type="submit"]');
+
+inputEmailAddressField(value){
+    this.getEmailAddressField().type(value);
+    return this;
+}
+inputPasswordField(value){
+    this.getPasswordField().type(value);
+    return this;
+}
+clickLoginButton(){
+    this.getLoginButton().click();
+    return new Header();
 }
 
-export default SignupLoginPage;
+}
+
+
+export default LoginToYourAccount;
