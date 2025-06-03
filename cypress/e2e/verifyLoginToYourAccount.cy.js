@@ -1,18 +1,29 @@
 /// <reference types="cypress" />
-import SignupLoginPage from "../pageObjects/SignupLoginPage";
+
 import signupLoginData from "../fixtures/signupLoginPageData.json"
 import Header from "../pageObjects/Header";
+import LoginToYourAccount from "../pageObjects/SignupLoginPage";
 
-describe("TC_4|Logout User", ()=>{
+describe("TC_4|Logout User", () => {
     const header = new Header();
-    const signupLoginPage = new SignupLoginPage();
-
+    const loginToYourAccount = new LoginToYourAccount();
+    
     it('TC_4.01 < Verify is visible "Login to your account"', ()=>{
         cy.visit('/');
         header.clickSignupLoginButton()
           .getLoginToYourAccountTitle()
-          .should('be.visible')
-          .and('have.text', signupLoginData.loginHeaderText);
+          .should('have.text', signupLoginData.loginHeaderText);
+    });
+
+    it('TC_4.02 < Verify that "Logged in as UserName" is visible', ()=>{
+        cy.visit('/');
+        header.clickSignupLoginButton()
+        loginToYourAccount.inputEmailAddressField(signupLoginData.EmailAddressLoginToYourAccount)
+        loginToYourAccount.inputPasswordField(signupLoginData.Password)
+        loginToYourAccount.clickLoginButton()
+        header
+          .getLoggedUserName()
+          .should('be.visible');
     });
 
 });

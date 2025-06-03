@@ -6,6 +6,7 @@ class Header {
     getSignupLoginButton = () => cy.get('a[href="/login"]');
     getTestCasesButton = () => cy.get('header a[href="/test_cases"]');
     getProductsPageButon = () => cy.get('a[href="/products"]');
+    getLoggedUserName = () => cy.get('Logged in as');
     
     clickSignupLoginButton(){
         this.getSignupLoginButton().click();
