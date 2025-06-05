@@ -2,5 +2,8 @@
     "loginHeaderText": "Login to your account",
     "EmailAddressLoginToYourAccount": "polinaskypestudy+test@gmail.com",
     "Password": "QAZwsx123!",
-    "Logged UserName": "Logged in as Poly"
+    "Logged UserName": "Logged in as Poly",
+    "incorrectEmail": "abc123@gmail.com",
+    "incorrectPassword": "abc123ABC",
+    "errorMessageIncorectCredentials": "Your email or password is incorrect!"
 }
