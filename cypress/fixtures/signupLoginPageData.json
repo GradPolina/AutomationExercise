@@ -1,6 +1,6 @@
 {
-    "loginHeaderText": "Login to your account",
-    "EmailAddressLoginToYourAccount": "polinaskypestudy+test@gmail.com",
-    "Password": "QAZwsx123!",
-    "Logged UserName": "Logged in as Poly"
+  "loginHeaderText": "Login to your account",
+  "emailAddressLoginToYourAccount": "polinaskypestudy+test@gmail.com",
+  "password": "QAZwsx123!",
+  "loggedUserName": "Logged in as Poly"
 }
