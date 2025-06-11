@@ -1,4 +1,4 @@
-class ProductPage {
+class ProductDetailsPage {
     getProductTitle = () => cy.get ('.product-information >h2');
     getProductCategory = () => cy.get('.product-information >p ').eq(0);
     getProductVisibility =() => cy.get('.product-information >p ').eq(1);
@@ -6,4 +6,4 @@ class ProductPage {
     getProductPrice = () => cy.get('.product-information >span')
 }
 
-export default ProductPage;
+export default ProductDetailsPage;
