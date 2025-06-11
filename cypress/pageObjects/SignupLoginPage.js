@@ -5,6 +5,7 @@ class SignupLoginPage {
   getEmailAddressField = () => cy.get('.login-form input[type="email"]');
   getPasswordField = () => cy.get('input[type="password"]');
   getLoginButton = () => cy.get('.login-form button[type="submit"]');
+  getErrorMessageIncorectCredentials = () => cy.get('.login-form p');
 
   inputEmailAddress(email) {
     this.getEmailAddressField().type(email);
