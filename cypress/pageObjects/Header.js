@@ -1,6 +1,7 @@
 import SignupLoginPage from "./SignupLoginPage";
 import TestCasesPage from "./TestCasesPage";
 import ProductsPage from "./ProductsPage";
+import ViewCartPage from "./ViewCartPage";
 
 class Header {
   getSignupLoginButton = () => cy.get('a[href="/login"]');
@@ -8,6 +9,7 @@ class Header {
   getProductsPageButon = () => cy.get('a[href="/products"]');
   getLoggedUsername = () => cy.get(".fa-user").parent();
   getLogoutButton = () => cy.get('[href="/logout"]');
+  getViewCartIcon = () => cy.get('#header a[href*="cart"]');
 
   clickSignupLoginButton() {
     this.getSignupLoginButton().click();
@@ -27,6 +29,11 @@ class Header {
   clickLogoutButton() {
     this.getLogoutButton().click();
     return new SignupLoginPage();
+  }
+
+  clickViewCartIcon() {
+    this.getViewCartIcon().click();
+    return new ViewCartPage();
   }
 }
 
