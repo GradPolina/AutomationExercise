@@ -5,7 +5,7 @@ import ProductsPage from "../pageObjects/ProductsPage";
 import ViewCart from "../pageObjects/ViewCartPage";
 import viewCartPageData from "../fixtures/viewCartPageData.json";
 
-import "cypress-real-events/support";
+//import "cypress-real-events/support";
 
 describe("View Cart Page", () => {
   const header = new Header();
@@ -44,5 +44,17 @@ describe("View Cart Page", () => {
         .getProductTotalPrice($row)
         .should("have.text", expected.price_total);
     });
+  });
+
+  it("TC_11 Verify Subscription in Cart page", () => {
+    cy.visit("/");
+    header.clickViewCartIcon();
+    viewCart.getSubscription("have.text", "Subscription");
+    viewCart.inputSubscriptionEmail("test@test.com");
+    viewCart.clickSubscriptionArrow();
+    viewCart.getSuccessMessage(
+      "have.text",
+      "You have been successfully subscribed!"
+    );
   });
 });
