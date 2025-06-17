@@ -1,19 +1,19 @@
 class ViewCart {
-    getEmptyCartMessage = () => cy.get('#empty_cart b');
-    getCartProductCell = () => cy.get('#cart_info_table .cart_product');
-    getCartRows = () => cy.get('#cart_info_table tbody tr');
-    getRowProductId = ($row) => cy.wrap($row).invoke('attr', 'id');
-    getProductName = ($row) => cy.wrap($row).find('.cart_description h4 a');
-    getProductPrice = ($row) => cy.wrap($row).find('.cart_price p');
-    getProductQuantity = ($row) => cy.wrap($row).find('.cart_quantity .disabled');
-    getProductTotalPrice = ($row) => cy.wrap($row).find('.cart_total_price');
+  getEmptyCartMessage = () => cy.get("#empty_cart b");
+  getSubscription = () => cy.get("h2");
+  getSubscriptionEmail = () => cy.get("#susbscribe_email");
+  getSubscriptionArrow = () => cy.get("#subscribe");
+  getSuccessMessage = () => cy.get("#success-subscribe");
 
-    verifyNumberOfItemsInCart(expectedCount) {
-      this.getCartProductCell().then($items => {
-        expect($items.length).to.equal(expectedCount);
-      });
-    }
+  inputSubscriptionEmail(text) {
+    this.getSubscriptionEmail().type(text);
+    return this;
+  }
 
+  clickSubscriptionArrow() {
+    this.getSubscriptionArrow().click();
+    return this;
+  }
 }
 
 export default ViewCart;
