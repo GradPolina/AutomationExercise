@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+import ProductsPage from "../pageObjects/ProductsPage";
+
+const productsPage = new ProductsPage();
+
+Cypress.Commands.add("addProductToCartMultipleTimes", (index, id, times) => {
+    for (let i = 0; i < times; i++) {
+        productsPage
+          .hoverOnProductByIndex(index)
+          .clickAddToCartById(id)
+          .clickContinueShopping();
+      }
+})
