@@ -4,16 +4,28 @@ import Header from "../pageObjects/Header";
 import ViewCart from "../pageObjects/ViewCartPage";
 import viewCartPageData from "../fixtures/viewCartPageData.json";
 
-describe("View Cart Page", ()=>{
-    const header = new Header();
-    const viewCart = new ViewCart();
+describe("View Cart Page", () => {
+  const header = new Header();
+  const viewCart = new ViewCart();
 
-    it('TC_12.1|Verify Cart is empty before shopping', ()=>{
-        cy.visit('/');
-        header.clickViewCartIcon();
-        viewCart.getEmptyCartMessage()
-            .should('be.visible')
-            .and('have.text', viewCartPageData.emptyCartMessage);
-    });
+  it("TC_12.1|Verify Cart is empty before shopping", () => {
+    cy.visit("/");
+    header.clickViewCartIcon();
+    viewCart
+      .getEmptyCartMessage()
+      .should("be.visible")
+      .and("have.text", viewCartPageData.emptyCartMessage);
+  });
 
+  it("TC_11 Verify Subscription in Cart page", () => {
+    cy.visit("/");
+    header.clickViewCartIcon();
+    viewCart.getSubscription("have.text", "Subscription");
+    viewCart.inputSubscriptionEmail("test@test.com");
+    viewCart.clickSubscriptionArrow();
+    viewCart.getSuccessMessage(
+      "have.text",
+      "You have been successfully subscribed!"
+    );
+  });
 });
