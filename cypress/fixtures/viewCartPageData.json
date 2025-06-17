@@ -1,3 +1,19 @@
 {
-    "emptyCartMessage": "Cart is empty!"
+    "emptyCartMessage": "Cart is empty!",
+    "addedTwoItems": [ 
+        {
+          "id": "product-1",
+          "description": "Blue Top",
+          "price": "Rs. 500",
+          "quantity": "1",
+          "price_total": "Rs. 500"
+        }, 
+        {
+          "id": "product-2",
+          "description": "Men Tshirt",
+          "price": "Rs. 400",
+          "quantity": "1",
+          "price_total": "Rs. 400"
+        }
+    ]
 }

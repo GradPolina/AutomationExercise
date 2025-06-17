@@ -19,8 +19,10 @@
     "url": "https://github.com/GradPolina/AutomationExercise/issues"
   },
   "homepage": "https://github.com/GradPolina/AutomationExercise#readme",
-
   "devDependencies": {
-  "cypress": "14.4.0"  
+    "cypress": "14.4.0"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.14.0"
   }
 }
