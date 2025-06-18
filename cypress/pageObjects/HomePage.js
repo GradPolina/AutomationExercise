@@ -1,7 +1,9 @@
 import Header from "./Header";
 
-class HomePage extends Header {
-    
+class HomePage {
+    constructor() {
+        this.header = new Header();
+    }
 }
 
 export default HomePage;

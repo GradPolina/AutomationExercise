@@ -1,0 +1,9 @@
+{
+    "regesterHeaderText": "Enter Account Information",
+    "newUserData": {
+        "dayOfBirth": "3",
+        "mounthOfBirth": "December",
+        "yearOfBirth": "1900",
+        "country": "United States"
+    }
+}
