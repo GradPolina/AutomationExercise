@@ -15,5 +15,14 @@
           "quantity": "1",
           "price_total": "Rs. 400"
         }
+    ],
+    "addedSameItem": [ 
+        {
+          "id": "product-8",
+          "description": "Fancy Green Top",
+          "price": "Rs. 700",
+          "quantity": "5",
+          "price_total": "Rs. 3500"
+        }
     ]
 }
