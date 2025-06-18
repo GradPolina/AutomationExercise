@@ -15,7 +15,7 @@ describe("Login User", ()=> {
         signupLoginPage.inputPassword(signupLoginPageData.incorrectPassword);
         signupLoginPage.clickLoginButton();
         signupLoginPage.getErrorMessageIncorectCredentials()
-            .should('have.text', signupLoginPageData.errorMessageIncorectCredentials)
+            .should('have.text', signupLoginPageData.errorMessageIncorectCredentials + 'ExtraText')
             .and('have.css', 'color', 'rgb(255, 0, 0)');
     })
 })
