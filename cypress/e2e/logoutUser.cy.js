@@ -14,7 +14,7 @@ describe("Logout User", () => {
       .clickSignupLoginButton()
       .getLoginToYourAccountTitle()
       .should("have.text", signupLoginData.loginHeaderText);
-    signupLoginPage.inputEmailAddress(
+    signupLoginPage.inputEmailforLogin(
       signupLoginData.emailAddressLoginToYourAccount
     );
     signupLoginPage.inputPassword(signupLoginData.password);
