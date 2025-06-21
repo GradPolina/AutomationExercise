@@ -6,5 +6,6 @@
   "loggedUserName": "Logged in as Poly",
   "incorrectEmail": "abc123@gmail.com",
   "incorrectPassword": "abc123ABC",
-  "errorMessageIncorectCredentials": "Your email or password is incorrect!"
+  "errorMessageIncorectCredentials": "Your email or password is incorrect!",
+  "errorMessageEmailAlreadyExist": "Email Address already exist!"
 }
