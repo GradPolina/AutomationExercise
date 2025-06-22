@@ -14,6 +14,7 @@ class SignupLoginPage {
 
 
   getErrorMessageIncorectCredentials = () => cy.get('.login-form p');
+  getErrorMessageSignUpForm = () => cy.get('.signup-form p')
 
   inputEmailforLogin(email) {
     this.getEmailForLoginField().type(email);
