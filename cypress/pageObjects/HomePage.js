@@ -31,7 +31,7 @@ class HomePage {
   }
   
   hoverOnProductByIndex(index) {
-    this.getProductOverlayByIndex(index).scrollIntoView().realHover();
+    this.getProductOverlayByIndex(index).invoke('show');
     return this;
   }
 
