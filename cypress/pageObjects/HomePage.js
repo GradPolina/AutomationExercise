@@ -36,7 +36,7 @@ class HomePage {
   }
 
   clickAddToCartById(id) {
-    this.getAddToCartButtonById(id).click();
+    this.getAddToCartButtonById(id).scrollIntoView().click();
     return this;
   }
 
