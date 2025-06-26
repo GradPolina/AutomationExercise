@@ -99,4 +99,22 @@ describe("View Cart Page", () => {
       .clickViewCartLink();
     viewCartPage.getProductCount().should("have.text", "4");
   });
+
+  it("TC_17|Remove Products From Cart", () => {
+    cy.visit("/");
+    homePage
+      .hoverOnProductByIndex(3)
+      .clickAddToCartById(4)
+      .clickContinueShopping();
+    header.clickViewCartIcon();
+    cy.url().should("include", "/view_cart");
+    viewCartPage
+      .removeProductById(4)
+      .getEmptyCartMessage()
+      .should("be.visible")
+      .and("have.text", viewCartPageData.emptyCartMessage);
+    viewCartPage
+      .getCartItemRowById(4)
+      .should("not.exist");
+  })
 });
