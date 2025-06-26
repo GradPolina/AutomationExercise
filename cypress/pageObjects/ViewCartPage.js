@@ -12,6 +12,8 @@ class ViewCart {
   getProductQuantity = ($row) => cy.wrap($row).find(".cart_quantity .disabled");
   getProductTotalPrice = ($row) => cy.wrap($row).find(".cart_total_price");
   getProductCount = () => cy.get(".cart_quantity button");
+  getDeleteButtonById = (id) => cy.get(`a[data-product-id='${id}']`);
+  getCartItemRowById = (id) => cy.get(`tr[id="product-${id}"]`);
 
   inputSubscriptionEmail(text) {
     this.getSubscriptionEmail().type(text);
@@ -27,6 +29,11 @@ class ViewCart {
     this.getCartProductCell().then(($items) => {
       expect($items.length).to.equal(expectedCount);
     });
+  }
+
+  removeProductById(id) {
+    this.getDeleteButtonById(id).click();
+    return this;
   }
 }
 
