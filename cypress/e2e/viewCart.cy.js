@@ -103,7 +103,7 @@ describe("View Cart Page", () => {
   it("TC_17|Remove Products From Cart", () => {
     cy.visit("/");
     homePage
-      .hoverOnProductByIndex(3)
+      .hoverOnProductById(4)
       .clickAddToCartById(4)
       .clickContinueShopping();
     header.clickViewCartIcon();
