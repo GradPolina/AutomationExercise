@@ -7,6 +7,9 @@ class HomePage {
   getSubscriptionArrow = () => cy.get("#subscribe");
   getSuccessMessage = () => cy.get("#success-subscribe");
   getViewProductButton = (id) => cy.get(`a[href="/product_details/${id}"]`);
+  getAddToCartButtonById = (id) => cy.get(`.overlay-content a[data-product-id="${id}"]`);
+  getContinueShoppingButton = () => cy.get('.modal-footer button.btn-success');
+  getProductOverlayByProductId = (id) => cy.get(`.product-overlay:has(a[data-product-id="${id}"])`);
 
   constructor() {
     this.header = new Header();
@@ -25,6 +28,25 @@ class HomePage {
   clickViewProductButton(id) {
     this.getViewProductButton(id).click();
     return new ProductDetailsPage();
+  }
+
+  hoverOnProductById(id) {
+    this.getProductOverlayByProductId(id)
+      .scrollIntoView()
+      .invoke('show');
+    return this;
+  }
+
+  clickAddToCartById(id) {
+    this.getAddToCartButtonById(id).then(($el) => {
+      $el[0].click();
+    });
+    return this;
+  }
+
+  clickContinueShopping() {
+    this.getContinueShoppingButton().click();
+    return this;
   }
 }
 
