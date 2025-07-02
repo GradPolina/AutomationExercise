@@ -8,8 +8,10 @@ class HomePage {
   getSuccessMessage = () => cy.get("#success-subscribe");
   getViewProductButton = (id) => cy.get(`a[href="/product_details/${id}"]`);
   getAddToCartButtonById = (id) => cy.get(`.overlay-content a[data-product-id="${id}"]`);
-  getContinueShoppingButton = () => cy.get('.modal-footer button.btn-success');
+  getContinueShoppingButton = () => cy.get(".modal-footer button.btn-success");
   getProductOverlayByProductId = (id) => cy.get(`.product-overlay:has(a[data-product-id="${id}"])`);
+  getArrowButton = () => cy.get("#scrollUp");
+  getCarouselHeader = () => cy.get(".col-sm-6 h2:visible");
 
   constructor() {
     this.header = new Header();
@@ -46,6 +48,11 @@ class HomePage {
 
   clickContinueShopping() {
     this.getContinueShoppingButton().click();
+    return this;
+  }
+
+  clickArrowButton() {
+    this.getArrowButton().click();
     return this;
   }
 }
