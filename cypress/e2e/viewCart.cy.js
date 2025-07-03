@@ -100,7 +100,7 @@ describe("View Cart Page", () => {
     viewCartPage.getProductCount().should("have.text", "4");
   });
 
-  it("TC_17|Remove Products From Cart", () => {
+  it("TC_17|Remove Products From Cart", {tags: ['@smoke', 'e2e']}, () => {
     cy.visit("/");
     homePage
       .hoverOnProductById(4)

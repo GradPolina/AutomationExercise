@@ -14,7 +14,10 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
+import registerCypressGrep from '@cypress/grep/src/support';
+
+registerCypressGrep({ tags: true });
 
 before(() => {
 	cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });

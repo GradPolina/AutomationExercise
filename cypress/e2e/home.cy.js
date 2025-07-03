@@ -17,7 +17,7 @@ describe("Home", () => {
     );
   });
 
-  it("TC_25|Verify Scroll Up using 'Arrow' button and Scroll Down functionality", () => {
+  it("TC_25|Verify Scroll Up using 'Arrow' button and Scroll Down functionality", {tags: ['@smoke']}, () => {
     cy.visit("/");
     cy.url().should("include", "automationexercise");
     cy.scrollTo('bottom');
