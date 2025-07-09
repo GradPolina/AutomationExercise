@@ -8,7 +8,7 @@ describe("Logout User", () => {
   const header = new Header();
   const signupLoginPage = new SignupLoginPage();
 
-  it("TC_4 | Logout User", () => {
+  it("TC_4 | Logout User", {tags: ['@e2e']}, () => {
     cy.visit("/");
     header
       .clickSignupLoginButton()

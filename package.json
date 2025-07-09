@@ -23,6 +23,7 @@
     "cypress": "14.4.0"
   },
   "dependencies": {
+    "@cypress/grep": "^4.1.0",
     "@faker-js/faker": "^9.8.0",
     "cypress-real-events": "^1.14.0"
   }
