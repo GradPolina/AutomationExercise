@@ -5,7 +5,9 @@
   "main": "cypress.config.js",
   "scripts": {
     "headless": "cypress run",
-    "headed:chrome": "cypress open --e2e --browser chrome"
+    "headed:chrome": "cypress open --e2e --browser chrome",
+    "smoke": "npx cypress run --env grepTags=@smoke",
+    "e2e": "npx cypress run --env grepTags=@e2e"
   },
   "repository": {
     "type": "git",
