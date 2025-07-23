@@ -1,3 +1,5 @@
+import SignupLoginPage from "./SignupLoginPage";
+import CheckoutPage from "./CheckoutPage";
 class ViewCart {
   getEmptyCartMessage = () => cy.get("#empty_cart b");
   getSubscription = () => cy.get("h2");
@@ -14,6 +16,8 @@ class ViewCart {
   getProductCount = () => cy.get(".cart_quantity button");
   getDeleteButtonById = (id) => cy.get(`a[data-product-id='${id}']`);
   getCartItemRowById = (id) => cy.get(`tr[id="product-${id}"]`);
+  getProceedToCheckoutBtn = () => cy.get("#cart_items .check_out");
+  getRegisterLink = () => cy.get(".modal-body a[href='/login']");
 
   inputSubscriptionEmail(text) {
     this.getSubscriptionEmail().type(text);
@@ -34,6 +38,21 @@ class ViewCart {
   removeProductById(id) {
     this.getDeleteButtonById(id).click();
     return this;
+  }
+
+  clickProceedToCheckoutBtnBeforeLogin() {
+    this.getProceedToCheckoutBtn().click();
+    return this;
+  }
+
+  clickProceedToCheckoutBtnAfterLogin() {
+    this.getProceedToCheckoutBtn().click();
+    return new CheckoutPage();
+  }
+
+  clickRegisterLink() {
+    this.getRegisterLink().click()
+    return new SignupLoginPage();
   }
 }
 
