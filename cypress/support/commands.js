@@ -36,3 +36,8 @@ Cypress.Commands.add("addProductToCartMultipleTimes", (index, id, times) => {
           .clickContinueShopping();
       }
 })
+
+Cypress.Commands.add('getDownloadedFileContent', (fileName) => {
+    const downloadsFolder = Cypress.config('downloadsFolder');
+    return cy.readFile(`${downloadsFolder}/${fileName}`, { timeout: 15000 });
+});

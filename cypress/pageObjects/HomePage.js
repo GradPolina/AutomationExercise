@@ -1,5 +1,6 @@
 import Header from "./Header";
 import ProductDetailsPage from "./ProductDetailsPage";
+import DeleteAccountPage from "./DeleteAccountPage";
 
 class HomePage {
   getSubscription = () => cy.get("h2");
@@ -12,6 +13,7 @@ class HomePage {
   getProductOverlayByProductId = (id) => cy.get(`.product-overlay:has(a[data-product-id="${id}"])`);
   getArrowButton = () => cy.get("#scrollUp");
   getCarouselHeader = () => cy.get(".col-sm-6 h2:visible");
+  getDeleteAccount = () => cy.get("a[href='/delete_account']");
 
   constructor() {
     this.header = new Header();
@@ -54,6 +56,11 @@ class HomePage {
   clickArrowButton() {
     this.getArrowButton().click();
     return this;
+  }
+
+  clickDeleteAccountLink() {
+    this.getDeleteAccount().click();
+    return new DeleteAccountPage();
   }
 }
 
