@@ -7,7 +7,8 @@
     "headless": "cypress run",
     "headed:chrome": "cypress open --e2e --browser chrome",
     "smoke": "npx cypress run --env grepTags=@smoke",
-    "e2e": "npx cypress run --env grepTags=@e2e"
+    "e2e": "npx cypress run --env grepTags=@e2e",
+    "api": "npx cypress run --env grepTags=@api"
   },
   "repository": {
     "type": "git",
