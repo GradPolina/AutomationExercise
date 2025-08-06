@@ -39,4 +39,22 @@ describe("API testing", () => {
       expect(response.duration).lessThan(1000);
     });
   });
+
+  it("TC API 4: PUT To All Brands List", { tags: ["@api"] }, () => {
+    cy.request({
+      method: "PUT",
+      url: "https://automationexercise.com/api/brandsList"
+    }).then((response) => {
+      expect(response.status).to.eq(200);
+      const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+      expect(responseBody).to.have.property("responseCode");
+      expect(responseBody).to.have.property("message");
+      expect(responseBody.message).to.be.a('string');
+      expect(responseBody.responseCode).to.eql(405); 
+      expect(responseBody.message).to.eql("This request method is not supported.");
+      expect(response.headers).to.have.property("content-type");
+      expect(response.headers["content-type"]).to.include('text/html');
+      expect(response.duration).lessThan(1000);
+    })
+  });
 });
