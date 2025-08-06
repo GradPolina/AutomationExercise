@@ -57,4 +57,31 @@ describe("API testing", () => {
       expect(response.duration).lessThan(1000);
     })
   });
+
+   it("TC API 5: POST To Search Product", { tags:["@api"] }, () => {
+    cy.request({
+      method: "POST",
+      url: "https://automationexercise.com/api/searchProduct",
+      form: true, // send as x-www-form-urlencoded
+      body: {search_product: "tshirt"}
+    }).then((response) => {
+      expect(response.status).to.eq(200);
+      const responseBody = typeof response.body === 'string' ? JSON.parse(response.body) : response.body;
+      expect(responseBody).to.have.property("responseCode");
+      expect(responseBody).to.have.property("products");
+      expect(responseBody.products).to.be.an("array");
+      expect(responseBody.responseCode).to.eq(200);
+      expect(responseBody.products.length).to.be.greaterThan(0);
+      const hasTshirt = responseBody.products.some(product =>
+        product.name.toLowerCase().includes("tshirt")
+      );
+      expect(hasTshirt).to.be.true;
+      responseBody.products.forEach(product => {
+        expect(product).to.have.all.keys("id", "name", "price", "brand", "category");
+      });
+      expect(response.headers).to.have.property("content-type");
+      expect(response.headers["content-type"]).to.include('text/html');
+      expect(response.duration).lessThan(1500);
+     }); 
+  });
 });
